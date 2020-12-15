@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+</head>
+<style>
+    body
+    {
+        display: grid;
+        place-items: center;
+        height: 700px;
+        background: black;
+    }
+    button
+    {
+        outline: none;
+        border: none;
+        height: 150px;
+        width: 350px;
+        border-radius: 150px;
+        background: transparent;
+        color: white;
+        font-size: 30px;
+        transition:all .5s;
+        z-index:1;
+    }
+    button::before
+    {
+        content: "";
+        height: 200px;
+        width: 400px;
+        border-radius: 150px;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-59%);
+        filter:blur(30px);
+        pointer-events: none;
+        z-index:-1;
+    }
+    button:hover::before
+    {
+        animation: slide 10s 0s infinite linear;
+        background: linear-gradient(to right,#ffffe0,#ff899b,#b0ff90,#37ffff,#ffffe0);
+        background-size: 500%;
+        background-position: left;
+    }
+    button:hover
+    {
+        animation: slide 10s 0s infinite linear;
+        background: linear-gradient(to right,#ffffe0,#ff899b,#b0ff90,#37ffff,#ffffe0);
+        background-size: 500%;
+        background-position: left;
+        color:black;
+    }
+    @keyframes slide {
+        from{background-position:0%}
+        to{background-position:500%}
+    }
+</style>
+<body>
+    <a href="donation.php"> <button>Donate</button> </a>
+   
+</body>
+</html>
